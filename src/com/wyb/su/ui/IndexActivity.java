@@ -16,6 +16,14 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
 
+/**
+ * @author yanbao
+ *
+ */
+/**
+ * @author yanbao
+ *
+ */
 public class IndexActivity extends FragmentActivity implements TabListener, OnPageChangeListener {
 	
 	private static String LOGTAG = "SU";
@@ -38,7 +46,11 @@ public class IndexActivity extends FragmentActivity implements TabListener, OnPa
 	
 	private IndexPagerAdapter mPagerAdapter=null;
 	
-	// 为ActionBar添加Tabs
+	/**
+	 * 为ActionBar添加Tabs
+	 * @param tab
+	 * @param index
+	 */
 	public void addTabs(Tab tab, int index){
 		if (null == tab) {
 			tab = mActionBar.newTab();
@@ -50,35 +62,41 @@ public class IndexActivity extends FragmentActivity implements TabListener, OnPa
 		mActionBar.addTab(tab);
 	}
 	
-	//初始化首页中的所有控件
+	/**
+	 * 初始化首页中的所有控件
+	 */
 	public void initView(){
 		if (null != mActionBar) {
+			// 设置ActionBar属性
 			mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 			mActionBar.setDisplayShowTitleEnabled(false);  
 			mActionBar.setDisplayShowHomeEnabled(false);
+			mActionBar.setDisplayUseLogoEnabled(true);
 		}else{
 			if (Debug.DEBUG) {
 				Log.i(LOGTAG, "mActionBar = null");
 			}
 		}
 		
+		// 为ActionBar添加需要的三个导航的Tabs
 		addTabs(mPlazaTab, PLAZA_INDEX);
 		addTabs(mCamareTab, CAMARE_INDEX);
 		addTabs(mMySpaceTab, MY_SPACE_INDEX);
 		
+		// 初始化ViewPager
 		mViewPager = (ViewPager) findViewById(R.id.index_pager);
 		mPagerAdapter = new IndexPagerAdapter(this.getSupportFragmentManager());
 		mViewPager.setAdapter(mPagerAdapter);
 		mViewPager.setOnPageChangeListener(this);
-		mViewPager.setCurrentItem(PLAZA_INDEX);
+		mViewPager.setCurrentItem(CAMARE_INDEX);
 
 		
 	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.index_main);
 		mActionBar = getActionBar();
 		initView();
@@ -89,6 +107,12 @@ public class IndexActivity extends FragmentActivity implements TabListener, OnPa
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
+	}
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
 	}
 	
 	@Override
@@ -117,7 +141,10 @@ public class IndexActivity extends FragmentActivity implements TabListener, OnPa
 
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction arg1) {
-		mViewPager.setCurrentItem(tab.getPosition());
+		if (null != mViewPager) {
+			mViewPager.setCurrentItem(tab.getPosition());
+		}
+		
 	}
 
 	@Override
@@ -140,7 +167,10 @@ public class IndexActivity extends FragmentActivity implements TabListener, OnPa
 
 	@Override
 	public void onPageSelected(int index) {
+		if (null != mActionBar) {
 			mActionBar.selectTab(mActionBar.getTabAt(index));
 		}
+			
+	}
 
 }

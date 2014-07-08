@@ -19,7 +19,7 @@ public class FragmentPlaza extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View plazaView = inflater.inflate(R.layout.plaza_fragment_layout, container);
+		View plazaView = inflater.inflate(R.layout.plaza_fragment_layout, container, false);
 		return plazaView;
 	}
 

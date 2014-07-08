@@ -7,6 +7,12 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="18" />
+    
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +22,8 @@
         <activity
             android:name="com.wyb.su.MainActivity"
             android:label="@string/app_name" 
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.loginFullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +31,9 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.wyb.su.ui.IndexActivity"></activity>
+        <activity 
+            android:name="com.wyb.su.ui.IndexActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

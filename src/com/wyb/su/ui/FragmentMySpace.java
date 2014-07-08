@@ -18,7 +18,7 @@ public class FragmentMySpace extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View spaceView = inflater.inflate(R.layout.my_space_fragment_layout, container);
+		View spaceView = inflater.inflate(R.layout.my_space_fragment_layout, container, false);
 		return spaceView;
 	}
 

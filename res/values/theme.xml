@@ -4,4 +4,5 @@
         name="Theme.loginFullScreen"
         parent="android:Theme.NoTitleBar.Fullscreen">
     </style>
+    
 </resources>
