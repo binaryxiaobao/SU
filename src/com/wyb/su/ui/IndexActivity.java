@@ -1,20 +1,23 @@
 package com.wyb.su.ui;
 
 
-import com.wyb.su.R;
-import com.wyb.su.adapter.IndexPagerAdapter;
-import com.wyb.su.utils.Debug;
-
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
+import android.app.ActivityManager;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
+
+import com.wyb.su.ManagerActivities;
+import com.wyb.su.R;
+import com.wyb.su.adapter.IndexPagerAdapter;
+import com.wyb.su.utils.CONSTANTS;
+import com.wyb.su.utils.Debug;
 
 /**
  * @author yanbao
@@ -24,14 +27,15 @@ import android.util.Log;
  * @author yanbao
  *
  */
-public class IndexActivity extends FragmentActivity implements TabListener, OnPageChangeListener {
+public class IndexActivity extends FragmentActivity implements TabListener {
 	
 	private static String LOGTAG = "SU";
 	private ViewPager mViewPager = null;
 	private ActionBar mActionBar = null;
 	private Fragment mFragmentPlaza = null;
-	private Fragment mFragmnetCamare = null;
+	private FragmentCamare mFragmnetCamare = null;
 	private Fragment mFragmentMySpace = null;
+	private Fragment[] mAllFragment = new Fragment[3];
 	private Tab mPlazaTab = null,
 			mCamareTab = null,
 			mMySpaceTab = null;
@@ -46,19 +50,30 @@ public class IndexActivity extends FragmentActivity implements TabListener, OnPa
 	
 	private IndexPagerAdapter mPagerAdapter=null;
 	
+	private Fragment mFragment;
+	
+	public IndexActivity (Fragment fr) {
+		mFragment = fr;
+	}
+	
+	public IndexActivity () {
+		
+	}
+	
 	/**
 	 * 为ActionBar添加Tabs
 	 * @param tab
 	 * @param index
 	 */
 	public void addTabs(Tab tab, int index){
+		Fragment fragment = null;
 		if (null == tab) {
 			tab = mActionBar.newTab();
 		}
 		
 		tab.setContentDescription(tabTitle[index]);
 		tab.setText(tabTitle[index]);
-		tab.setTabListener(this);
+		tab.setTabListener(new IndexActivity(mAllFragment[index]));
 		mActionBar.addTab(tab);
 	}
 	
@@ -78,17 +93,21 @@ public class IndexActivity extends FragmentActivity implements TabListener, OnPa
 			}
 		}
 		
+		mAllFragment[0] = new FragmentPlaza();
+		mAllFragment[1] = new FragmentCamare();
+		mAllFragment[2] = new FragmentMySpace();
+		
 		// 为ActionBar添加需要的三个导航的Tabs
 		addTabs(mPlazaTab, PLAZA_INDEX);
 		addTabs(mCamareTab, CAMARE_INDEX);
 		addTabs(mMySpaceTab, MY_SPACE_INDEX);
 		
 		// 初始化ViewPager
-		mViewPager = (ViewPager) findViewById(R.id.index_pager);
+		/*mViewPager = (ViewPager) findViewById(R.id.index_pager);
 		mPagerAdapter = new IndexPagerAdapter(this.getSupportFragmentManager());
 		mViewPager.setAdapter(mPagerAdapter);
 		mViewPager.setOnPageChangeListener(this);
-		mViewPager.setCurrentItem(CAMARE_INDEX);
+		mViewPager.setCurrentItem(CAMARE_INDEX);*/
 
 		
 	}
@@ -101,6 +120,7 @@ public class IndexActivity extends FragmentActivity implements TabListener, OnPa
 		mActionBar = getActionBar();
 		initView();
 		
+		ManagerActivities.getInstance().addActivity(this);
 	}
 	
 	@Override
@@ -131,29 +151,34 @@ public class IndexActivity extends FragmentActivity implements TabListener, OnPa
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-	}
-
-	@Override
-	public void onTabReselected(Tab arg0, FragmentTransaction arg1) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction arg1) {
-		if (null != mViewPager) {
-			mViewPager.setCurrentItem(tab.getPosition());
+		if (Debug.DEBUG) {
+			Log.i(LOGTAG, "index--->ondestroy");
 		}
-		
+		ManagerActivities.getInstance().removeAll();
 	}
 
 	@Override
-	public void onTabUnselected(Tab arg0, FragmentTransaction arg1) {
+	public void onTabReselected(Tab arg0, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		/*if (null != mViewPager) {
+			mViewPager.setCurrentItem(tab.getPosition());
+		}*/
+		
+		ft.add(R.id.context, mFragment);
+		
+	}
+
+	@Override
+	public void onTabUnselected(Tab arg0, FragmentTransaction ft) {
+		ft.remove(mFragment);
+	}
+
+	/*@Override
 	public void onPageScrollStateChanged(int arg0) {
 		// TODO Auto-generated method stub
 		
@@ -170,7 +195,27 @@ public class IndexActivity extends FragmentActivity implements TabListener, OnPa
 		if (null != mActionBar) {
 			mActionBar.selectTab(mActionBar.getTabAt(index));
 		}
+		
+		mFragmnetCamare = (FragmentCamare) mPagerAdapter.getItem(CAMARE_INDEX);
+		if (CAMARE_INDEX != index) {
+			mFragmnetCamare.disableCamare();
+		} else if(!FragmentCamare.isInitCamare){
+			//mFragmnetCamare.enableCamare();
+		}
 			
+	}*/
+	
+	@Override
+	public void onBackPressed() {		
+		if (1 == this.getActionBar().getSelectedTab().getPosition()) {
+			mActionBar.show();
+			mActionBar.setSelectedNavigationItem(PLAZA_INDEX);
+		}else {
+			if (Debug.DEBUG) {
+				Log.i(LOGTAG, "index--->finish");
+			}
+			finish();
+		}
 	}
 
 }

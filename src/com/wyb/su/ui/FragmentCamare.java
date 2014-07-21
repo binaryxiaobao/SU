@@ -39,7 +39,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
 import android.provider.MediaStore.Video;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -75,6 +75,7 @@ import com.wyb.su.views.ProgressView.State;
 
 public class FragmentCamare extends Fragment implements OnClickListener, OnTouchListener {
 
+	public static boolean isInitCamare = false;
 	private View view;
 	private final static String CLASS_LABEL = "RecordActivity";
 	private final static String LOG_TAG = CLASS_LABEL;
@@ -106,7 +107,7 @@ public class FragmentCamare extends Fragment implements OnClickListener, OnTouch
 	private boolean isPreviewOn = false;
 	//当前录制的质量，会影响视频清晰度和文件大小
 	private int currentResolution = CONSTANTS.RESOLUTION_MEDIUM_VALUE;
-	private Camera mCamera;
+	public static Camera mCamera;
 
 	//预览的宽高和屏幕宽高
 	private int previewWidth = 480, screenWidth = 480;
@@ -270,10 +271,22 @@ public class FragmentCamare extends Fragment implements OnClickListener, OnTouch
 	public native static int  checkNeonFromJNI();
 	private boolean initSuccess = false;
 	
+	public void enableCamare(){
+		initCameraLayout();
+	}
+	
+	public void disableCamare(){
+		if (null != topLayout) {
+			topLayout.removeAllViews();
+		}
+	}
+	
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.camare_fragment_layout, container, false);
+		getActivity().getActionBar().hide();
 		initLayout();
 		return view;
 	}
@@ -324,8 +337,8 @@ public class FragmentCamare extends Fragment implements OnClickListener, OnTouch
 	@Override
 	public void onPause() {
 		super.onPause();
-		if(!isFinalizing)
-			getActivity().finish();
+		/*if(!isFinalizing)
+			getActivity().finish();*/
 		
 		if (mWakeLock != null) {
 			mWakeLock.release();
@@ -379,6 +392,7 @@ public class FragmentCamare extends Fragment implements OnClickListener, OnTouch
 	}
 
 	private void initCameraLayout() {
+		isInitCamare = true;
 		new AsyncTask<String, Integer, Boolean>(){
 
 			@Override
@@ -407,34 +421,38 @@ public class FragmentCamare extends Fragment implements OnClickListener, OnTouch
 				topLayout = (RelativeLayout) view.findViewById(R.id.recorder_surface_parent);
 				if(topLayout != null && topLayout.getChildCount() > 0)
 					topLayout.removeAllViews();
-				
-				cameraView = new CameraView(getActivity(), cameraDevice);
-				
-				handleSurfaceChanged();
-				//设置surface的宽高
-				RelativeLayout.LayoutParams layoutParam1 = new RelativeLayout.LayoutParams(screenWidth,(int) (screenWidth*(previewWidth/(previewHeight*1f))));
-				layoutParam1.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
-				//int margin = Util.calculateMargin(previewWidth, screenWidth);
-				//layoutParam1.setMargins(0,margin,0,margin);
+				if (getActivity().getActionBar().getSelectedTab().getPosition() == 1) {
+					cameraView = new CameraView(getActivity(), cameraDevice);
+					
+					handleSurfaceChanged();
+					//设置surface的宽高
+					RelativeLayout.LayoutParams layoutParam1 = new RelativeLayout.LayoutParams(screenWidth,(int) (screenWidth*(previewWidth/(previewHeight*1f))));
+					layoutParam1.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
+					//int margin = Util.calculateMargin(previewWidth, screenWidth);
+					//layoutParam1.setMargins(0,margin,0,margin);
 
-				RelativeLayout.LayoutParams layoutParam2 = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
-				layoutParam2.topMargin = screenWidth;
+					RelativeLayout.LayoutParams layoutParam2 = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
+					layoutParam2.topMargin = screenWidth;
+					
+					View view = new View(getActivity());
+					view.setFocusable(false);
+					view.setBackgroundColor(Color.BLACK);
+					view.setFocusableInTouchMode(false);
+					
+					topLayout.addView(cameraView, layoutParam1);
+					topLayout.addView(view,layoutParam2);
+					
+					topLayout.setOnTouchListener(FragmentCamare.this);
+					
+					switchCameraIcon.setOnClickListener(FragmentCamare.this);
+					if(cameraSelection == CameraInfo.CAMERA_FACING_FRONT)
+						flashIcon.setVisibility(View.GONE);
+					else
+						flashIcon.setVisibility(View.VISIBLE);
+				} else {
+					topLayout.removeAllViews();
+				}
 				
-				View view = new View(getActivity());
-				view.setFocusable(false);
-				view.setBackgroundColor(Color.BLACK);
-				view.setFocusableInTouchMode(false);
-				
-				topLayout.addView(cameraView, layoutParam1);
-				topLayout.addView(view,layoutParam2);
-				
-				topLayout.setOnTouchListener(FragmentCamare.this);
-				
-				switchCameraIcon.setOnClickListener(FragmentCamare.this);
-				if(cameraSelection == CameraInfo.CAMERA_FACING_FRONT)
-					flashIcon.setVisibility(View.GONE);
-				else
-					flashIcon.setVisibility(View.VISIBLE);
 			}
 			
 		}.execute("start");
@@ -1002,8 +1020,11 @@ public class FragmentCamare extends Fragment implements OnClickListener, OnTouch
 				mVideoTimestamp = lastSavedframe.getTimeStamp();
 				try {
 						yuvIplImage.getByteBuffer().put(lastSavedframe.getFrameBytesData());
-						videoRecorder.setTimestamp(lastSavedframe.getTimeStamp());
-						videoRecorder.record(yuvIplImage);
+						if (null != videoRecorder) {
+							videoRecorder.setTimestamp(lastSavedframe.getTimeStamp());
+							videoRecorder.record(yuvIplImage);
+						}
+						
 					} catch (com.googlecode.javacv.FrameRecorder.Exception e) {
 						Log.i("recorder", "录制错误"+e.getMessage());
 						e.printStackTrace();
@@ -1019,6 +1040,9 @@ public class FragmentCamare extends Fragment implements OnClickListener, OnTouch
 
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
+		
+		double x0 = 0.0;
+		double x1 = 0.0;
 
 		if(!recordFinish){
 			if(totalTime< recordingTime){
@@ -1026,6 +1050,7 @@ public class FragmentCamare extends Fragment implements OnClickListener, OnTouch
 				case MotionEvent.ACTION_DOWN:
 					//如果MediaRecorder没有被初始化
 					//执行初始化
+					x0 = event.getX();
 					mHandler.removeMessages(3);
 					mHandler.removeMessages(4);
 					mHandler.sendEmptyMessageDelayed(3,300);
@@ -1035,8 +1060,15 @@ public class FragmentCamare extends Fragment implements OnClickListener, OnTouch
 					mHandler.removeMessages(4);
 					if(rec)
 						mHandler.sendEmptyMessage(4);
-					
 					break;
+				/*case MotionEvent.ACTION_MOVE:
+					if (event.getX()-x0 >= 200) {
+						mHandler.removeMessages(3);
+						mHandler.removeMessages(4);
+						if(rec)
+							mHandler.sendEmptyMessage(4);
+					}
+					break;*/
 				}
 			}else{
 				//如果录制时间超过最大时间，保存视频

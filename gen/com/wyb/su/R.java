@@ -55,8 +55,8 @@ public final class R {
     public static final class id {
         public static final int SCROLLER_ID=0x7f080014;
         public static final int action_settings=0x7f08001a;
+        public static final int context=0x7f080019;
         public static final int global_dialog_title=0x7f080013;
-        public static final int index_pager=0x7f080019;
         public static final int line_hori_center=0x7f080017;
         public static final int play_cancel=0x7f080001;
         public static final int play_next=0x7f080002;

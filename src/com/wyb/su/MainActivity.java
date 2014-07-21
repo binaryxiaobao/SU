@@ -24,13 +24,16 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		ManagerActivities.getInstance().addActivity(this);
 		mContext = this.getApplicationContext();
 		mAlarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 		//注意这个时间是要作为设置AlarmManager中的第二个参数
 		mTime = SystemClock.elapsedRealtime()+mTime;
 		
 		//使用PendingIntent进行延迟3秒
-		Intent intent = new Intent(this, IndexActivity.class);
+		Intent intent = new Intent();
+		intent.setClass(this, IndexActivity.class);
+		//intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		PendingIntent pIntent = PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 		mAlarmManager.set(AlarmManager.ELAPSED_REALTIME, mTime, pIntent);
 	}
@@ -38,7 +41,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onStop() {
 		super.onStop();
-
+		ManagerActivities.getInstance().removeActivity(this);
 	}
 	
 	@Override
@@ -53,7 +56,7 @@ public class MainActivity extends Activity {
 			PendingIntent pIntent = PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 			mAlarmManager.cancel(pIntent);
 		}
-		finish();
+		
 	}
 
 

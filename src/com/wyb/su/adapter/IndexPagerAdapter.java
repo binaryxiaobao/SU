@@ -9,10 +9,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-public class IndexPagerAdapter extends FragmentPagerAdapter {
+public class IndexPagerAdapter {
 	
 
-	public IndexPagerAdapter(FragmentManager fm) {
+	/*public IndexPagerAdapter(FragmentManager fm) {
 		super(fm);
 	}
 
@@ -37,7 +37,7 @@ public class IndexPagerAdapter extends FragmentPagerAdapter {
 	public int getCount() {
 		// TODO Auto-generated method stub
 		return 3;
-	}
+	}*/
 	
 	
 
