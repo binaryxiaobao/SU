@@ -48,6 +48,13 @@ public class IndexActivity extends FragmentActivity implements TabListener {
 			"拍一拍",
 			"我的"};
 	
+	private int[] tabIcon =
+			new int[]{
+			R.drawable.square_icon_checked,
+			R.drawable.record_icon_normal,
+			R.drawable.my_icon_checked
+	};
+	
 	private IndexPagerAdapter mPagerAdapter=null;
 	
 	private Fragment mFragment;
@@ -72,7 +79,8 @@ public class IndexActivity extends FragmentActivity implements TabListener {
 		}
 		
 		tab.setContentDescription(tabTitle[index]);
-		tab.setText(tabTitle[index]);
+		//tab.setText(tabTitle[index]);
+		tab.setIcon(tabIcon[index]);
 		tab.setTabListener(new IndexActivity(mAllFragment[index]));
 		mActionBar.addTab(tab);
 	}

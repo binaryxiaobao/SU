@@ -4,5 +4,38 @@
     <string name="app_name">拍一拍</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="star">明星</string>
+    <string name="super_man">达人</string>
+    <string name="new_friend">新朋友</string>
+    <string name="imageview_content_description">Loading…</string>
+    <string name="square_label_recommend">推荐</string>
+    <string name="square_label_hot">排行</string>
+    <string name="square_label_star">明星名人</string>
+    <string name="square_label_star_video">名人</string>
+    <string name="square_label_idea">创意</string>
+    <string name="square_label_baby">宝宝</string>
+    <string name="square_label_girl">美女</string>
+    <string name="square_label_famous_people">名人</string>
+    <string name="square_label_very_people">牛人</string>
+    <string name="square_label_pet">萌宠</string>
+    <string name="square_label_funny">搞笑</string>
+    <string name="square_label_life">生活</string>
+    <string name="square_label_info">资讯</string>
+    <string name="square_label_tour">旅游</string>
+    <string name="square_lable_chanel">频道</string>
+    <string name="square_lable_car">汽车</string>
+    <string name="square_lable_nba">NBA</string>
+    <string name="square_lable_sports">体育</string>
+    <string name="square_lable_fashion">时尚</string>
+    <string name="square_lable_foods">美食</string>
+    
+    <string name="square_lable_article">热门话题</string>
+    <string name="square_label_hot1">真想总是在最后</string>
+    <string name="square_label_hot2">绣春刀</string>
+    <string name="square_label_hot3">葡萄姐斓曦</string>
+    <string name="square_label_hot4">熊孩子出没</string>
+    <string name="square_label_hot5">炫酷新技能</string>
+    <string name="square_label_hot6">小囧熊</string>
+    
 
 </resources>
