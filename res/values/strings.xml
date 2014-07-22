@@ -37,5 +37,8 @@
     <string name="square_label_hot5">炫酷新技能</string>
     <string name="square_label_hot6">小囧熊</string>
     
+    <string name="square_label_find">随便看看</string>
+    <string name="square_label_contend">自动连播，一次看个痛快</string>
+    
 
 </resources>

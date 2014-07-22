@@ -534,176 +534,243 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout 
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="#ffdedede">
-                <TextView 
+                android:background="#ffdedede" >
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12.0sp"
+                    android:layout_marginBottom="5.0dp"
+                    android:layout_marginTop="5.0dp"
                     android:background="#00FFFFFF"
                     android:text="@string/square_lable_article"
-                    android:layout_marginTop="5.0dp"
-                    android:layout_marginBottom="5.0dp"/>
+                    android:textSize="12.0sp" />
             </LinearLayout>
-            
-            <LinearLayout 
+
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2">
-                <LinearLayout 
+                android:weightSum="2" >
+
+                <LinearLayout
                     android:id="@+id/hot1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="16.0dp"
-                    android:paddingBottom="16.0dp"
-                    android:gravity="center"
-                    android:background="@drawable/option_selector"
                     android:layout_weight="1"
-                    android:clickable="true">
-                    <TextView 
+                    android:background="@drawable/option_selector"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:paddingBottom="16.0dp"
+                    android:paddingTop="16.0dp" >
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="16.0sp"
                         android:background="#00FFFFFF"
-                        android:text="@string/square_label_hot1"/>
+                        android:text="@string/square_label_hot1"
+                        android:textColor="@color/black"
+                        android:textSize="16.0sp" />
                 </LinearLayout>
+
                 <ImageView
                     android:layout_width="1.0dp"
                     android:layout_height="fill_parent"
                     android:scaleType="fitXY"
                     android:src="#ffdedede" />
-                <LinearLayout 
+
+                <LinearLayout
                     android:id="@+id/hot2"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="16.0dp"
-                    android:paddingBottom="16.0dp"
-                    android:gravity="center"
-                    android:background="@drawable/option_selector"
                     android:layout_weight="1"
-                    android:clickable="true">
-                    <TextView 
+                    android:background="@drawable/option_selector"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:paddingBottom="16.0dp"
+                    android:paddingTop="16.0dp" >
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="16.0sp"
                         android:background="#00FFFFFF"
-                        android:text="@string/square_label_hot2"/>
+                        android:text="@string/square_label_hot2"
+                        android:textColor="@color/black"
+                        android:textSize="16.0sp" />
                 </LinearLayout>
             </LinearLayout>
-            
+
             <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="1.0dp"
-                    android:scaleType="fitXY"
-                    android:src="#ffdedede" />
-            
-            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dp"
+                android:scaleType="fitXY"
+                android:src="#ffdedede" />
+
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2">
-                <LinearLayout 
+                android:weightSum="2" >
+
+                <LinearLayout
                     android:id="@+id/hot3"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="16.0dp"
-                    android:paddingBottom="16.0dp"
-                    android:gravity="center"
-                    android:background="@drawable/option_selector"
                     android:layout_weight="1"
-                    android:clickable="true">
-                    <TextView 
+                    android:background="@drawable/option_selector"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:paddingBottom="16.0dp"
+                    android:paddingTop="16.0dp" >
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="16.0sp"
                         android:background="#00FFFFFF"
-                        android:text="@string/square_label_hot3"/>
+                        android:text="@string/square_label_hot3"
+                        android:textColor="@color/black"
+                        android:textSize="16.0sp" />
                 </LinearLayout>
+
                 <ImageView
                     android:layout_width="1.0dp"
                     android:layout_height="fill_parent"
                     android:scaleType="fitXY"
                     android:src="#ffdedede" />
-                <LinearLayout 
+
+                <LinearLayout
                     android:id="@+id/hot4"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="16.0dp"
-                    android:paddingBottom="16.0dp"
-                    android:gravity="center"
-                    android:background="@drawable/option_selector"
                     android:layout_weight="1"
-                    android:clickable="true">
-                    <TextView 
+                    android:background="@drawable/option_selector"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:paddingBottom="16.0dp"
+                    android:paddingTop="16.0dp" >
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="16.0sp"
                         android:background="#00FFFFFF"
-                        android:text="@string/square_label_hot4"/>
+                        android:text="@string/square_label_hot4"
+                        android:textColor="@color/black"
+                        android:textSize="16.0sp" />
                 </LinearLayout>
             </LinearLayout>
-            
+
             <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="1.0dp"
-                    android:scaleType="fitXY"
-                    android:src="#ffdedede" />
-            
-            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dp"
+                android:scaleType="fitXY"
+                android:src="#ffdedede" />
+
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2">
-                <LinearLayout 
+                android:weightSum="2" >
+
+                <LinearLayout
                     android:id="@+id/hot5"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="16.0dp"
-                    android:paddingBottom="16.0dp"
-                    android:gravity="center"
-                    android:background="@drawable/option_selector"
                     android:layout_weight="1"
-                    android:clickable="true">
-                    <TextView 
+                    android:background="@drawable/option_selector"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:paddingBottom="16.0dp"
+                    android:paddingTop="16.0dp" >
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="16.0sp"
                         android:background="#00FFFFFF"
-                        android:text="@string/square_label_hot5"/>
+                        android:text="@string/square_label_hot5"
+                        android:textColor="@color/black"
+                        android:textSize="16.0sp" />
                 </LinearLayout>
+
                 <ImageView
                     android:layout_width="1.0dp"
                     android:layout_height="fill_parent"
                     android:scaleType="fitXY"
                     android:src="#ffdedede" />
-                <LinearLayout 
+
+                <LinearLayout
                     android:id="@+id/hot6"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="16.0dp"
-                    android:paddingBottom="16.0dp"
-                    android:gravity="center"
-                    android:background="@drawable/option_selector"
                     android:layout_weight="1"
-                    android:clickable="true">
-                    <TextView 
+                    android:background="@drawable/option_selector"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:paddingBottom="16.0dp"
+                    android:paddingTop="16.0dp" >
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="16.0sp"
                         android:background="#00FFFFFF"
-                        android:text="@string/square_label_hot6"/>
+                        android:text="@string/square_label_hot6"
+                        android:textColor="@color/black"
+                        android:textSize="16.0sp" />
                 </LinearLayout>
             </LinearLayout>
-            
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="5.0dp"
+                android:scaleType="fitXY"
+                android:src="#ffdedede" />
+
+            <LinearLayout
+                android:id="@+id/find"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:paddingBottom="4.0dp" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingBottom="5.0dp"
+                    android:paddingLeft="5.0dp"
+                    android:paddingTop="5.0dp"
+                    android:src="@drawable/square_view" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00FFFFFF"
+                        android:paddingBottom="5.0dp"
+                        android:paddingTop="5.0dp"
+                        android:text="@string/square_label_find"
+                        android:textColor="@color/black"
+                        android:textSize="16.0sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00FFFFFF"
+                        android:paddingBottom="5.0dp"
+                        android:text="@string/square_label_contend"
+                        android:textColor="#CCCCCC"
+                        android:textSize="12.0sp" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
