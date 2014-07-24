@@ -124,7 +124,7 @@
                 <LinearLayout
                     android:id="@+id/recommend"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -150,7 +150,7 @@
                 <LinearLayout
                     android:id="@+id/recommend2"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -176,7 +176,7 @@
                 <LinearLayout
                     android:id="@+id/recommend3"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -209,7 +209,7 @@
                 <LinearLayout
                     android:id="@+id/recommend11"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -235,7 +235,7 @@
                 <LinearLayout
                     android:id="@+id/recommend22"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -261,7 +261,7 @@
                 <LinearLayout
                     android:id="@+id/recommend33"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -294,7 +294,7 @@
                 <LinearLayout
                     android:id="@+id/recommend111"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -320,7 +320,7 @@
                 <LinearLayout
                     android:id="@+id/recommend222"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -346,7 +346,7 @@
                 <LinearLayout
                     android:id="@+id/recommend333"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -379,7 +379,7 @@
                 <LinearLayout
                     android:id="@+id/recommend1111"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -405,7 +405,7 @@
                 <LinearLayout
                     android:id="@+id/recommend2222"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -431,7 +431,7 @@
                 <LinearLayout
                     android:id="@+id/recommend3333"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -464,7 +464,7 @@
                 <LinearLayout
                     android:id="@+id/recommend11111"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -490,7 +490,7 @@
                 <LinearLayout
                     android:id="@+id/recommend22222"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"
@@ -516,7 +516,7 @@
                 <LinearLayout
                     android:id="@+id/recommend33333"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_weight="1.0"
                     android:background="@drawable/square_pet_bg"
                     android:gravity="right"

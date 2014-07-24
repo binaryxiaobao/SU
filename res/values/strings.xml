@@ -40,5 +40,11 @@
     <string name="square_label_find">随便看看</string>
     <string name="square_label_contend">自动连播，一次看个痛快</string>
     
+    <string name="ask_weibo">邀请新浪微博好友</string>
+    <string name="ask_qq">邀请QQ好友</string>
+    <string name="ask_weixin">邀请微信好友</string>
+    <string name="ask_phone">邀请手机好友</string>
+    <string name="ask_email">邀请邮件好友</string>
+    
 
 </resources>

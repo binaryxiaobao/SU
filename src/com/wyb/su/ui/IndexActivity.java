@@ -1,6 +1,7 @@
 package com.wyb.su.ui;
 
 
+import net.simonvt.menudrawer.MenuDrawer;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
@@ -9,6 +10,7 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.DropBoxManager;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -58,6 +60,8 @@ public class IndexActivity extends FragmentActivity implements TabListener {
 	private IndexPagerAdapter mPagerAdapter=null;
 	
 	private Fragment mFragment;
+	
+	private MenuDrawer mMenu;
 	
 	public IndexActivity (Fragment fr) {
 		mFragment = fr;
@@ -123,8 +127,10 @@ public class IndexActivity extends FragmentActivity implements TabListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		setContentView(R.layout.index_main);
+		mMenu = MenuDrawer.attach(this);
+		mMenu.setContentView(R.layout.index_main);
+		mMenu.setMenuView(R.layout.left_menu);
+		//setContentView(R.layout.index_main);
 		mActionBar = getActionBar();
 		initView();
 		

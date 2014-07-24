@@ -9,9 +9,97 @@ package com.wyb.su;
 
 public final class R {
     public static final class attr {
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int border_color=0x7f010006;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int border_width=0x7f010005;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int buttonColor=0x7f010001;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cornerRadius=0x7f010004;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int shadowColor=0x7f010002;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int shadowEnabled=0x7f010000;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int shadowHeight=0x7f010003;
     }
     public static final class color {
         public static final int black=0x7f040001;
+        public static final int fbutton_color_alizarin=0x7f040013;
+        public static final int fbutton_color_amethyst=0x7f04000b;
+        public static final int fbutton_color_asbestos=0x7f040018;
+        public static final int fbutton_color_belize_hole=0x7f04000a;
+        public static final int fbutton_color_carrot=0x7f040011;
+        public static final int fbutton_color_clouds=0x7f040015;
+        public static final int fbutton_color_concrete=0x7f040017;
+        public static final int fbutton_color_emerald=0x7f040007;
+        public static final int fbutton_color_green_sea=0x7f040006;
+        public static final int fbutton_color_midnight_blue=0x7f04000e;
+        public static final int fbutton_color_nephritis=0x7f040008;
+        public static final int fbutton_color_orange=0x7f040010;
+        public static final int fbutton_color_peter_river=0x7f040009;
+        public static final int fbutton_color_pomegranate=0x7f040014;
+        public static final int fbutton_color_pumpkin=0x7f040012;
+        public static final int fbutton_color_silver=0x7f040016;
+        public static final int fbutton_color_sun_flower=0x7f04000f;
+        public static final int fbutton_color_transparent=0x7f040019;
+        public static final int fbutton_color_turquoise=0x7f040005;
+        public static final int fbutton_color_wet_asphalt=0x7f04000d;
+        public static final int fbutton_color_wisteria=0x7f04000c;
+        public static final int fbutton_default_color=0x7f040003;
+        public static final int fbutton_default_shadow_color=0x7f040004;
         public static final int square_textview_press=0x7f040002;
         public static final int white=0x7f040000;
     }
@@ -24,86 +112,105 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f050000;
         public static final int activity_vertical_margin=0x7f050001;
+        public static final int fbutton_default_conner_radius=0x7f050002;
+        public static final int fbutton_default_padding_bottom=0x7f050006;
+        public static final int fbutton_default_padding_left=0x7f050003;
+        public static final int fbutton_default_padding_right=0x7f050004;
+        public static final int fbutton_default_padding_top=0x7f050005;
+        public static final int fbutton_default_shadow_height=0x7f050007;
     }
     public static final class drawable {
-        public static final int btn_darkgrey_bg=0x7f020000;
-        public static final int btn_darkgrey_bg_pressed=0x7f020001;
-        public static final int btn_lightgreen_bg=0x7f020002;
-        public static final int btn_lightgreen_bg_pressed=0x7f020003;
-        public static final int btn_recorder_cancel=0x7f020004;
-        public static final int btn_recorder_flashlight=0x7f020005;
-        public static final int btn_recorder_frontcamera=0x7f020006;
-        public static final int btn_recorder_next=0x7f020007;
-        public static final int btn_recorder_picture=0x7f020008;
-        public static final int btn_recorder_video=0x7f020009;
-        public static final int btn_recorder_video_text=0x7f02000a;
-        public static final int button_globaldialog=0x7f02000b;
-        public static final int button_status_color=0x7f02000c;
-        public static final int daren=0x7f02000d;
-        public static final int go_arrow_default=0x7f02000e;
-        public static final int ic_launcher=0x7f02000f;
-        public static final int ic_playlist_recommend_icon_default=0x7f020010;
-        public static final int icn_change_view=0x7f020011;
-        public static final int icn_change_view_pressed=0x7f020012;
-        public static final int icn_flashlight_off=0x7f020013;
-        public static final int icn_flashlight_on=0x7f020014;
-        public static final int icn_picture=0x7f020015;
-        public static final int icn_picture_pressed=0x7f020016;
-        public static final int icn_play_big=0x7f020017;
-        public static final int icn_video=0x7f020018;
-        public static final int icn_video_pressed=0x7f020019;
-        public static final int login_bg=0x7f02001a;
-        public static final int login_text=0x7f02001b;
-        public static final int my_icon_checked=0x7f02001c;
-        public static final int option_selector=0x7f02001d;
-        public static final int recommend=0x7f02001e;
-        public static final int record_icon_normal=0x7f02001f;
-        public static final int recorder_success_progress=0x7f020020;
-        public static final int square_follow_star_normal=0x7f020021;
-        public static final int square_icon_checked=0x7f020022;
-        public static final int square_new_friend_icon=0x7f020023;
-        public static final int square_pet_bg=0x7f020024;
-        public static final int square_textview_bg=0x7f020025;
-        public static final int square_view=0x7f020026;
-        public static final int video_text01=0x7f020027;
-        public static final int video_text02=0x7f020028;
-        public static final int video_text03=0x7f020029;
-        public static final int video_text04=0x7f02002a;
+        public static final int bob=0x7f020000;
+        public static final int btn_darkgrey_bg=0x7f020001;
+        public static final int btn_darkgrey_bg_pressed=0x7f020002;
+        public static final int btn_lightgreen_bg=0x7f020003;
+        public static final int btn_lightgreen_bg_pressed=0x7f020004;
+        public static final int btn_recorder_cancel=0x7f020005;
+        public static final int btn_recorder_flashlight=0x7f020006;
+        public static final int btn_recorder_frontcamera=0x7f020007;
+        public static final int btn_recorder_next=0x7f020008;
+        public static final int btn_recorder_picture=0x7f020009;
+        public static final int btn_recorder_video=0x7f02000a;
+        public static final int btn_recorder_video_text=0x7f02000b;
+        public static final int button_globaldialog=0x7f02000c;
+        public static final int button_status_color=0x7f02000d;
+        public static final int daren=0x7f02000e;
+        public static final int go_arrow_default=0x7f02000f;
+        public static final int ic_launcher=0x7f020010;
+        public static final int ic_playlist_recommend_icon_default=0x7f020011;
+        public static final int icn_change_view=0x7f020012;
+        public static final int icn_change_view_pressed=0x7f020013;
+        public static final int icn_flashlight_off=0x7f020014;
+        public static final int icn_flashlight_on=0x7f020015;
+        public static final int icn_picture=0x7f020016;
+        public static final int icn_picture_pressed=0x7f020017;
+        public static final int icn_play_big=0x7f020018;
+        public static final int icn_video=0x7f020019;
+        public static final int icn_video_pressed=0x7f02001a;
+        public static final int invite_friend_email=0x7f02001b;
+        public static final int invite_friend_phone=0x7f02001c;
+        public static final int invite_friend_qq=0x7f02001d;
+        public static final int invite_friend_qzone=0x7f02001e;
+        public static final int invite_friend_weibo=0x7f02001f;
+        public static final int invite_friend_weixin=0x7f020020;
+        public static final int login_bg=0x7f020021;
+        public static final int login_text=0x7f020022;
+        public static final int my_icon_checked=0x7f020023;
+        public static final int option_selector=0x7f020024;
+        public static final int recommend=0x7f020025;
+        public static final int record_icon_normal=0x7f020026;
+        public static final int recorder_success_progress=0x7f020027;
+        public static final int square_follow_star_normal=0x7f020028;
+        public static final int square_icon_checked=0x7f020029;
+        public static final int square_new_friend_icon=0x7f02002a;
+        public static final int square_pet_bg=0x7f02002b;
+        public static final int square_textview_bg=0x7f02002c;
+        public static final int square_view=0x7f02002d;
+        public static final int video_text01=0x7f02002e;
+        public static final int video_text02=0x7f02002f;
+        public static final int video_text03=0x7f020030;
+        public static final int video_text04=0x7f020031;
     }
     public static final class id {
         public static final int SCROLLER_ID=0x7f090014;
-        public static final int action_settings=0x7f090033;
+        public static final int action_settings=0x7f090039;
+        public static final int ask_email=0x7f09001f;
+        public static final int ask_phone=0x7f09001e;
+        public static final int ask_qq=0x7f09001c;
+        public static final int ask_weibo=0x7f09001b;
+        public static final int ask_weixin=0x7f09001d;
         public static final int context=0x7f090019;
-        public static final int find=0x7f090032;
+        public static final int find=0x7f090038;
         public static final int global_dialog_title=0x7f090013;
-        public static final int hot1=0x7f09002c;
-        public static final int hot2=0x7f09002d;
-        public static final int hot3=0x7f09002e;
-        public static final int hot4=0x7f09002f;
-        public static final int hot5=0x7f090030;
-        public static final int hot6=0x7f090031;
+        public static final int hot1=0x7f090032;
+        public static final int hot2=0x7f090033;
+        public static final int hot3=0x7f090034;
+        public static final int hot4=0x7f090035;
+        public static final int hot5=0x7f090036;
+        public static final int hot6=0x7f090037;
         public static final int line_hori_center=0x7f090017;
-        public static final int new_friend=0x7f09001c;
+        public static final int new_friend=0x7f090022;
         public static final int play_cancel=0x7f090001;
         public static final int play_next=0x7f090002;
         public static final int preview_video=0x7f090004;
         public static final int preview_video_parent=0x7f090003;
         public static final int previre_play=0x7f090005;
-        public static final int recommend=0x7f09001d;
-        public static final int recommend11=0x7f090020;
-        public static final int recommend111=0x7f090023;
-        public static final int recommend1111=0x7f090026;
-        public static final int recommend11111=0x7f090029;
-        public static final int recommend2=0x7f09001e;
-        public static final int recommend22=0x7f090021;
-        public static final int recommend222=0x7f090024;
-        public static final int recommend2222=0x7f090027;
-        public static final int recommend22222=0x7f09002a;
-        public static final int recommend3=0x7f09001f;
-        public static final int recommend33=0x7f090022;
-        public static final int recommend333=0x7f090025;
-        public static final int recommend3333=0x7f090028;
-        public static final int recommend33333=0x7f09002b;
+        public static final int profile_image=0x7f09001a;
+        public static final int recommend=0x7f090023;
+        public static final int recommend11=0x7f090026;
+        public static final int recommend111=0x7f090029;
+        public static final int recommend1111=0x7f09002c;
+        public static final int recommend11111=0x7f09002f;
+        public static final int recommend2=0x7f090024;
+        public static final int recommend22=0x7f090027;
+        public static final int recommend222=0x7f09002a;
+        public static final int recommend2222=0x7f09002d;
+        public static final int recommend22222=0x7f090030;
+        public static final int recommend3=0x7f090025;
+        public static final int recommend33=0x7f090028;
+        public static final int recommend333=0x7f09002b;
+        public static final int recommend3333=0x7f09002e;
+        public static final int recommend33333=0x7f090031;
         public static final int recorder_bottom=0x7f090000;
         public static final int recorder_cancel=0x7f09000e;
         public static final int recorder_flashlight=0x7f09000b;
@@ -120,8 +227,8 @@ public final class R {
         public static final int setting_account_bind_cancel=0x7f090016;
         public static final int setting_account_bind_confirm=0x7f090018;
         public static final int setting_account_bind_text=0x7f090015;
-        public static final int star=0x7f09001a;
-        public static final int super_man=0x7f09001b;
+        public static final int star=0x7f090020;
+        public static final int super_man=0x7f090021;
         public static final int txtTimer=0x7f09000a;
     }
     public static final class layout {
@@ -131,8 +238,9 @@ public final class R {
         public static final int camare_fragment_layout=0x7f030003;
         public static final int global_dialog_tpl=0x7f030004;
         public static final int index_main=0x7f030005;
-        public static final int my_space_fragment_layout=0x7f030006;
-        public static final int plaza_fragment_layout=0x7f030007;
+        public static final int left_menu=0x7f030006;
+        public static final int my_space_fragment_layout=0x7f030007;
+        public static final int plaza_fragment_layout=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -140,6 +248,11 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
+        public static final int ask_email=0x7f060028;
+        public static final int ask_phone=0x7f060027;
+        public static final int ask_qq=0x7f060025;
+        public static final int ask_weibo=0x7f060024;
+        public static final int ask_weixin=0x7f060026;
         public static final int hello_world=0x7f060002;
         public static final int imageview_content_description=0x7f060006;
         public static final int new_friend=0x7f060005;
@@ -210,4 +323,150 @@ public final class R {
         public static final int Dialog_loading_noDim=0x7f070004;
         public static final int Theme_loginFullScreen=0x7f070005;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a CircleImageView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CircleImageView_border_color com.wyb.su:border_color}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircleImageView_border_width com.wyb.su:border_width}</code></td><td></td></tr>
+           </table>
+           @see #CircleImageView_border_color
+           @see #CircleImageView_border_width
+         */
+        public static final int[] CircleImageView = {
+            0x7f010005, 0x7f010006
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.wyb.su.R.attr#border_color}
+          attribute's value can be found in the {@link #CircleImageView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.wyb.su:border_color
+        */
+        public static final int CircleImageView_border_color = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.wyb.su.R.attr#border_width}
+          attribute's value can be found in the {@link #CircleImageView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.wyb.su:border_width
+        */
+        public static final int CircleImageView_border_width = 0;
+        /** Attributes that can be used with a FButton.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #FButton_buttonColor com.wyb.su:buttonColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #FButton_cornerRadius com.wyb.su:cornerRadius}</code></td><td></td></tr>
+           <tr><td><code>{@link #FButton_shadowColor com.wyb.su:shadowColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #FButton_shadowEnabled com.wyb.su:shadowEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #FButton_shadowHeight com.wyb.su:shadowHeight}</code></td><td></td></tr>
+           </table>
+           @see #FButton_buttonColor
+           @see #FButton_cornerRadius
+           @see #FButton_shadowColor
+           @see #FButton_shadowEnabled
+           @see #FButton_shadowHeight
+         */
+        public static final int[] FButton = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.wyb.su.R.attr#buttonColor}
+          attribute's value can be found in the {@link #FButton} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.wyb.su:buttonColor
+        */
+        public static final int FButton_buttonColor = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.wyb.su.R.attr#cornerRadius}
+          attribute's value can be found in the {@link #FButton} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.wyb.su:cornerRadius
+        */
+        public static final int FButton_cornerRadius = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.wyb.su.R.attr#shadowColor}
+          attribute's value can be found in the {@link #FButton} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.wyb.su:shadowColor
+        */
+        public static final int FButton_shadowColor = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.wyb.su.R.attr#shadowEnabled}
+          attribute's value can be found in the {@link #FButton} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.wyb.su:shadowEnabled
+        */
+        public static final int FButton_shadowEnabled = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.wyb.su.R.attr#shadowHeight}
+          attribute's value can be found in the {@link #FButton} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.wyb.su:shadowHeight
+        */
+        public static final int FButton_shadowHeight = 3;
+    };
 }
