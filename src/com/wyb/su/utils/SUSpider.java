@@ -24,8 +24,14 @@ public class SUSpider {
 		if (null != mUrl) {
 			try {
 				Document doc = Jsoup.connect(mUrl.toString()).get();
-				Elements es = doc.select("a[target=_blank] img[src]");		
-				Element  e = es.iterator().next();
+				Elements es = doc.select("a[target=_blank] img[src]");	
+				Element  e = es.first();
+				if (es.iterator().hasNext()) {
+					e = es.iterator().next();
+				}
+				if(null == e){
+					return null;
+				}
 				String downloadUrl = e.attr("src");
 				
 				return new URL(downloadUrl);

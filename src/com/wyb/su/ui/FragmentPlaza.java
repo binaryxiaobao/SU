@@ -15,16 +15,24 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 public class FragmentPlaza extends Fragment {
-	private LinearLayout[] Ll = new LinearLayout[7];;
+	private LinearLayout[] Ll = new LinearLayout[15];;
 	//需要进行解析的网站
 	private String[] mChanel = new String[] {
 			"http://www.meishichina.com/",
 			"http://www.uimaker.com/tags.php?/%CD%BC%B1%EAui/",
 			"http://www.hao123.com/star",
 			"http://www.quanjing.com/feature/household.html",
-			"http://www.mamiakids.com/photo.html",
-			"http://www.pengfu.com/jinghuatu_1.html",
-			"http://www.mnsfz.com/"
+			"http://www.ik123.com/q/haokan/xiaohai.html",
+			"http://gaoxiaoo.com/archives/category/meinvtupiandaquan",
+			"http://www.mnsfz.com/",
+			"http://www.lanrentuku.com/sort/%D7%E3%C7%F2/",
+			"http://www.tuweng.com/life/",
+			"",
+			"http://www.ivsky.com/tupian/ziranfengguang/",
+			"http://roll.sohu.com/20111227/n330417211.shtml",
+			"http://car.autohome.com.cn/Pic/",
+			"http://tieba.baidu.com/f?kw=nba&tp=1",
+			"http://product.yesky.com/c/506003_17215.shtml"
 	};
 	
 	@Override
@@ -53,6 +61,14 @@ public class FragmentPlaza extends Fragment {
 		Ll[4] = (LinearLayout) plazaView.findViewById(R.id.recommend22);
 		Ll[5] = (LinearLayout) plazaView.findViewById(R.id.recommend33);
 		Ll[6] = (LinearLayout) plazaView.findViewById(R.id.recommend111);
+		Ll[7] = (LinearLayout) plazaView.findViewById(R.id.recommend222);
+		Ll[8] = (LinearLayout) plazaView.findViewById(R.id.recommend333);
+		Ll[9] = (LinearLayout) plazaView.findViewById(R.id.recommend1111);
+		Ll[10] = (LinearLayout) plazaView.findViewById(R.id.recommend2222);
+		Ll[11] = (LinearLayout) plazaView.findViewById(R.id.recommend3333);
+		Ll[12] = (LinearLayout) plazaView.findViewById(R.id.recommend11111);
+		Ll[13] = (LinearLayout) plazaView.findViewById(R.id.recommend22222);
+		Ll[14] = (LinearLayout) plazaView.findViewById(R.id.recommend33333);
 	}
 	
 	@Override
