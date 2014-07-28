@@ -46,5 +46,7 @@
     <string name="ask_phone">邀请手机好友</string>
     <string name="ask_email">邀请邮件好友</string>
     
+    <string name="login">登陆</string>
+    
 
 </resources>

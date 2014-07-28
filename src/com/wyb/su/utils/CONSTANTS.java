@@ -28,5 +28,9 @@ public class CONSTANTS {
 	public final static int RESOLUTION_HIGH_VALUE = 2;
 	public final static int RESOLUTION_MEDIUM_VALUE = 1;
 	public final static int RESOLUTION_LOW_VALUE = 0;
+	
+	public static final String APP_KEY      = "2928196933";
+	public static final String REDIRECT_URL = "https://api.weibo.com/oauth2/default.html";
+	public static final String SCOPE = "";
 
 }

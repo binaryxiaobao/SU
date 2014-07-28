@@ -3,22 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res/com.wyb.su"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#AAAAAA"
+    android:background="#708090"
     android:gravity="center"
     android:orientation="vertical"
     android:paddingLeft="10dp"
     android:paddingRight="10dp" >
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/profile_image"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="20dp"
-        android:background="#AAAAAA"
-        android:src="@drawable/bob"
-        app:border_color="#FF000000"
-        app:border_width="2dp" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left" 
+        android:background="#708090"
+        android:paddingLeft="30dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/login_btn"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="20dp"
+            android:background="#708090"
+            android:clickable="true"
+            android:src="@drawable/bob"
+            app:border_color="#FF000000"
+            app:border_width="2dp" />
+    </LinearLayout>
+
+    <!-- #7D9EC0 -->
 
     <info.hoang8f.widget.FButton
         android:id="@+id/ask_weibo"
@@ -28,9 +39,10 @@
         android:drawableLeft="@drawable/invite_friend_weibo"
         android:paddingLeft="5dp"
         android:text="@string/ask_weibo"
-        app:buttonColor="@color/fbutton_color_sun_flower"
+        android:textColor="#FFFFFF"
+        app:buttonColor="#7D9EC0"
         app:cornerRadius="5dp"
-        app:shadowColor="@color/fbutton_color_orange"
+        app:shadowColor="#585f66"
         app:shadowEnabled="true"
         app:shadowHeight="5dp" />
 
@@ -42,9 +54,10 @@
         android:drawableLeft="@drawable/invite_friend_qq"
         android:paddingLeft="5dp"
         android:text="@string/ask_qq"
-        app:buttonColor="@color/fbutton_color_sun_flower"
+        android:textColor="#FFFFFF"
+        app:buttonColor="#7D9EC0"
         app:cornerRadius="5dp"
-        app:shadowColor="@color/fbutton_color_orange"
+        app:shadowColor="#585f66"
         app:shadowEnabled="true"
         app:shadowHeight="5dp" />
 
@@ -56,9 +69,10 @@
         android:drawableLeft="@drawable/invite_friend_weixin"
         android:paddingLeft="5dp"
         android:text="@string/ask_weixin"
-        app:buttonColor="@color/fbutton_color_sun_flower"
+        android:textColor="#FFFFFF"
+        app:buttonColor="#7D9EC0"
         app:cornerRadius="5dp"
-        app:shadowColor="@color/fbutton_color_orange"
+        app:shadowColor="#585f66"
         app:shadowEnabled="true"
         app:shadowHeight="5dp" />
 
@@ -70,9 +84,10 @@
         android:drawableLeft="@drawable/invite_friend_phone"
         android:paddingLeft="5dp"
         android:text="@string/ask_phone"
-        app:buttonColor="@color/fbutton_color_sun_flower"
+        android:textColor="#FFFFFF"
+        app:buttonColor="#7D9EC0"
         app:cornerRadius="5dp"
-        app:shadowColor="@color/fbutton_color_orange"
+        app:shadowColor="#585f66"
         app:shadowEnabled="true"
         app:shadowHeight="5dp" />
 
@@ -84,9 +99,10 @@
         android:drawableLeft="@drawable/invite_friend_email"
         android:paddingLeft="5dp"
         android:text="@string/ask_email"
-        app:buttonColor="@color/fbutton_color_sun_flower"
+        android:textColor="#FFFFFF"
+        app:buttonColor="#7D9EC0"
         app:cornerRadius="5dp"
-        app:shadowColor="@color/fbutton_color_orange"
+        app:shadowColor="#585f66"
         app:shadowEnabled="true"
         app:shadowHeight="5dp" />
 

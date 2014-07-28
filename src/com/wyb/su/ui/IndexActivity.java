@@ -9,11 +9,14 @@ import android.app.ActivityManager;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.DropBoxManager;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 
 import com.wyb.su.ManagerActivities;
 import com.wyb.su.R;
@@ -21,6 +24,8 @@ import com.wyb.su.adapter.IndexPagerAdapter;
 import com.wyb.su.utils.CONSTANTS;
 import com.wyb.su.utils.Debug;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * @author yanbao
  *
@@ -29,7 +34,7 @@ import com.wyb.su.utils.Debug;
  * @author yanbao
  *
  */
-public class IndexActivity extends FragmentActivity implements TabListener {
+public class IndexActivity extends FragmentActivity implements TabListener, OnClickListener {
 	
 	private static String LOGTAG = "SU";
 	private ViewPager mViewPager = null;
@@ -63,6 +68,8 @@ public class IndexActivity extends FragmentActivity implements TabListener {
 	
 	private MenuDrawer mMenu;
 	
+	private CircleImageView mLoginBtn = null;
+	
 	public IndexActivity (Fragment fr) {
 		mFragment = fr;
 	}
@@ -93,6 +100,10 @@ public class IndexActivity extends FragmentActivity implements TabListener {
 	 * 初始化首页中的所有控件
 	 */
 	public void initView(){
+		
+		mLoginBtn = (CircleImageView) mMenu.findViewById(R.id.login_btn);
+		mLoginBtn.setOnClickListener(this);
+		
 		if (null != mActionBar) {
 			// 设置ActionBar属性
 			mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -113,6 +124,7 @@ public class IndexActivity extends FragmentActivity implements TabListener {
 		addTabs(mPlazaTab, PLAZA_INDEX);
 		addTabs(mCamareTab, CAMARE_INDEX);
 		addTabs(mMySpaceTab, MY_SPACE_INDEX);
+		
 		
 		// 初始化ViewPager
 		/*mViewPager = (ViewPager) findViewById(R.id.index_pager);
@@ -230,6 +242,20 @@ public class IndexActivity extends FragmentActivity implements TabListener {
 			}
 			finish();
 		}
+	}
+
+	@Override
+	public void onClick(View view) {
+		switch (view.getId()) {
+		case R.id.login_btn:
+			Intent intent = new Intent(IndexActivity.this, LoginActivity.class);
+			startActivityForResult(intent, 1);
+			break;
+
+		default:
+			break;
+		}
+		
 	}
 
 }

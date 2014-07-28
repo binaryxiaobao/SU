@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <declare-styleable name="FButton">
         <attr name="shadowEnabled" format="boolean" />
         <attr name="buttonColor" format="color" />
@@ -7,10 +8,13 @@
         <attr name="shadowHeight" format="dimension" />
         <attr name="cornerRadius" format="dimension" />
     </declare-styleable>
-    
     <declare-styleable name="CircleImageView">
         <attr name="border_width" format="dimension" />
         <attr name="border_color" format="color" />
     </declare-styleable>
-    
+
+    <attr name="actionBarSize" format="dimension">
+        <enum name="wrap_content" value="0" />
+    </attr>
+
 </resources>

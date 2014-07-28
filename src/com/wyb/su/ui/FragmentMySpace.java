@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import com.wyb.su.R;
 
 public class FragmentMySpace extends Fragment {
+	
+	//private BootstrapButton
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
