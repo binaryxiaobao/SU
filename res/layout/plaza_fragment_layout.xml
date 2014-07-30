@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <!--
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,6 +101,38 @@
                         android:text="@string/new_friend"
                         android:textSize="20sp" />
                 </LinearLayout>
+            </LinearLayout>
+            -->
+
+            <LinearLayout
+                android:id="@+id/search_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/option_selector"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:weightSum="5" >
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="4"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="@string/default_serach"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="#00FFFFFF"
+                    android:clickable="false"
+                    android:src="@drawable/search_icon" />
             </LinearLayout>
 
             <TextView
@@ -725,53 +758,54 @@
                 android:layout_height="5.0dp"
                 android:scaleType="fitXY"
                 android:src="#ffdedede" />
-
-            <LinearLayout
-                android:id="@+id/find"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="#00FFFFFF"
-                android:clickable="true"
-                android:orientation="horizontal"
-                android:paddingBottom="4.0dp" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:paddingBottom="5.0dp"
-                    android:paddingLeft="5.0dp"
-                    android:paddingTop="5.0dp"
-                    android:src="@drawable/square_view" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:background="#00FFFFFF"
-                        android:paddingBottom="5.0dp"
-                        android:paddingTop="5.0dp"
-                        android:text="@string/square_label_find"
-                        android:textColor="@color/black"
-                        android:textSize="16.0sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:background="#00FFFFFF"
-                        android:paddingBottom="5.0dp"
-                        android:text="@string/square_label_contend"
-                        android:textColor="#CCCCCC"
-                        android:textSize="12.0sp" />
-                </LinearLayout>
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/find"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/option_selector"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingBottom="5.0dp"
+            android:paddingLeft="5.0dp"
+            android:paddingTop="5.0dp"
+            android:src="@drawable/square_view" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#00FFFFFF"
+                android:paddingBottom="5.0dp"
+                android:paddingTop="5.0dp"
+                android:text="@string/square_label_find"
+                android:textColor="@color/black"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#00FFFFFF"
+                android:paddingBottom="5.0dp"
+                android:text="@string/square_label_contend"
+                android:textColor="#CCCCCC"
+                android:textSize="12.0sp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

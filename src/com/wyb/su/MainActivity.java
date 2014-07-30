@@ -1,5 +1,7 @@
 package com.wyb.su;
 
+import cn.sharesdk.framework.ShareSDK;
+
 import com.wyb.su.ui.IndexActivity;
 import com.wyb.su.utils.Debug;
 
@@ -36,6 +38,8 @@ public class MainActivity extends Activity {
 		//intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		PendingIntent pIntent = PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 		mAlarmManager.set(AlarmManager.ELAPSED_REALTIME, mTime, pIntent);
+		
+		ShareSDK.initSDK(this);
 	}
 	
 	@Override
@@ -56,6 +60,8 @@ public class MainActivity extends Activity {
 			PendingIntent pIntent = PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 			mAlarmManager.cancel(pIntent);
 		}
+		
+		ShareSDK.stopSDK(this);
 		
 	}
 

@@ -47,6 +47,14 @@
     <string name="ask_email">邀请邮件好友</string>
     
     <string name="login">登陆</string>
+    <string name="default_serach">请输入您要搜索的关键字</string>
+    
+    <string name="default_video_number">0</string>
+    <string name="default_video_share">0</string>
+    <string name="default_video_contribute">x0</string>
+    <string name="video">视屏</string>
+    <string name="share_us">分享</string>
+    <string name="contribute">贡献</string>
     
 
 </resources>
