@@ -83,7 +83,7 @@ public class FragmentPlaza extends Fragment {
 				e.printStackTrace();
 			}
 			SUSpider spider = new SUSpider(url);
-			BitMapSyncTask task = new BitMapSyncTask(Ll[i], spider);
+			BitMapSyncTask task = new BitMapSyncTask(Ll[i], spider, getActivity());
 			task.execute(url);
 		}
 		

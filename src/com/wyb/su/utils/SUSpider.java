@@ -9,11 +9,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 public class SUSpider {
 	
-	private URL mUrl;
+	public URL mUrl;
 	private static final String TAG = "SU";
 	
 	public SUSpider(URL url) {

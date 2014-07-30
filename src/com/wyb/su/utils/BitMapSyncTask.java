@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.SoftReference;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,6 +19,10 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -36,17 +41,20 @@ public class BitMapSyncTask extends AsyncTask<URL, String, Boolean> {
 	private LinearLayout mLl = null;
 	private SUSpider mSpider;
 	public static HashMap<String, SoftReference<Bitmap>> mImageCache = new HashMap<String, SoftReference<Bitmap>>();
+	public Context mContext;
+	private URL urls = null;
 	
-	public BitMapSyncTask(LinearLayout ll, SUSpider spider){
+	
+	public BitMapSyncTask(LinearLayout ll, SUSpider spider, Context context){
 		mLl = ll;
 		mSpider = spider;
-		
+		mContext = context;
 	}
 	
-	static{
+	/*static{
 		//让HashMap线程安全
 		Collections.synchronizedMap(mImageCache);
-	}
+	}*/
 	
 	private void cacheToSDCard (String url, Bitmap bitmap) {
 		//如果有SD卡挂在
@@ -118,15 +126,50 @@ public class BitMapSyncTask extends AsyncTask<URL, String, Boolean> {
 		return false;
 	}
 	
+	//将从网络中爬取图片URL保存到SharedPreference当中
+	public void saveBitmapUrl(URL value, URL key){
+		String urlString = value.toString();
+		SharedPreferences sp = mContext.getSharedPreferences("urls", Context.MODE_PRIVATE);
+		Editor edit = sp.edit();
+		edit.putString(key.toString(), urlString);
+		edit.commit();
+	}
+	
+	//从SharedPreference当中取得
+	public boolean getUrlFromSP(URL key){
+		SharedPreferences sp = mContext.getSharedPreferences("urls", Context.MODE_PRIVATE);
+		if(null == sp || null == key){
+			return false;
+		}
+		String k = key.toString();
+		String urlString = sp.getString(k, null);
+		try {
+			urls = new URL(urlString);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		if(null != urls){
+			return true;
+		}
+		
+		return false;
+	}
 	
 	//下载图片到sdcard中
 	@Override
 	protected Boolean doInBackground(URL... url) {
-		//获得图片的URL
-		URL urls = mSpider.getBitMap();
+		
+		if(!getUrlFromSP(mSpider.mUrl)){
+			//获得图片的URL
+			urls = mSpider.getBitMap();
+		}
 		
 		//根据图片URL下载图片流
 		if(null != urls){
+			
+			//保存URL到SharedPreference当中
+			saveBitmapUrl(urls, mSpider.mUrl);
+			
 			//查看是否在两级缓存中已经存在
 			if(chooseCache(urls))
 				return true;
